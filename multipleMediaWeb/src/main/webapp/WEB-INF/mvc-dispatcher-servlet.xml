@@ -1,0 +1,140 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa/spring-jpa-1.1.xsd"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+	<context:component-scan base-package="com.multiplemedia.controller;com.multiplemedia.service;com.multiplemedia.serviceImpl;com.multiplemedia.dao;com.multiplemedia.daoImpl;com.multiplemedia.model" />
+	<!--  
+	<jpa:repositories base-package="com.multiplemedia.dao;com.multiplemedia.daoImpl" repository-impl-postfix="">
+    <jpa:repository id="variableRepository" />
+	</jpa:repositories>
+	-->
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- different way to configure jdbc.properties <context:property-placeholder 
+		location="jdbc.properties"/> -->
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.mysql}" />
+		<property name="url" value="${jdbc.url.mysql}" />
+		<property name="username" value="${jdbc.username.mysql}" />
+		<property name="password" value="${jdbc.password.mysql}" />
+
+		<property name="initialSize" value="5" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="30" />
+
+
+		<property name="maxWait" value="60000" />
+
+
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+	</bean>
+
+
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.multiplemedia.model" />
+		
+
+		<!-- using annotations 
+		<property name="annotatedClasses">
+			<list>
+				<value>com.multiplemedia.model.User</value>
+				<value>com.multiplemedia.model.Company</value>
+			</list>
+		</property>
+		-->
+		
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> 
+				<prop key="hibernate.current_session_context_class">thread</prop>-->
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.use_sql_comments">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
+			</props>
+		</property>
+
+	</bean>
+
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" id="PersistenceExceptionTranslator" />
+
+ 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	
+	
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />	
+	</bean>
+	
+	
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">  
+            <property name="config">  
+                    <bean class="com.google.code.kaptcha.util.Config">  
+                            <constructor-arg type="java.util.Properties">  
+                                    <props>  
+                                        <prop key="kaptcha.image.width">100</prop>   
+                                        <prop key="kaptcha.image.height">40</prop>  
+  										<!-- captcha content -->
+                                        <prop key="kaptcha.textproducer.char.string">0123456789</prop>  
+                                        <prop key="kaptcha.textproducer.char.length">4</prop>  
+                                        <prop key="kaptcha.border">yes</prop>  
+                                        <prop key="kaptcha.border.color">105,179,90</prop>  
+                                        <prop key="kaptcha.border.thickness">1</prop>  
+                                        <prop key="kaptcha.textproducer.font.color">red</prop>  
+                                        <prop key="kaptcha.textproducer.font.size">40</prop>  
+                                        <prop key="kaptcha.textproducer.font.names">BKamrnBd</prop>  
+                                        <prop key="kaptcha.noise.color">blue</prop>  
+                                        <prop key="kaptcha.textproducer.char.space">3</prop>  
+                                       </props>  
+                            </constructor-arg>  
+                    </bean>  
+            </property>  
+     </bean>  
+	
+	 <mvc:resources mapping="/resources/**" location="/resources/" cache-period="1000" />
+	 <mvc:annotation-driven />
+	 <tx:annotation-driven transaction-manager="transactionManager"/>
+	 
+     
+	 <mvc:interceptors>
+ 		 <mvc:interceptor>
+   		 	<mvc:mapping path="/admin/**"/>
+    		<mvc:exclude-mapping path="/admin/validate"/>
+    		<bean class="com.multiplemedia.interceptor.SessionInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors> 
+	
+
+</beans>

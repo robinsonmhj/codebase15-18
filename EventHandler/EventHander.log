@@ -1,0 +1,9 @@
+2015-05-08 15:39:42 [ main:0 ] - [ ERROR ] log.error I am AsyncListener, I am going to memory
+2015-05-08 15:39:42 [ main:0 ] - [ ERROR ] log.error I am AsyncListener, I am going to memory
+2015-05-08 15:39:42 [ main:4 ] - [ DEBUG ] Class:com.tmg.core.Properties
+2015-05-08 15:39:42 [ main:4 ] - [ DEBUG ] currentpath:C:\Users\hma\workspace\EventHandler
+2015-05-08 15:39:42 [ main:6 ] - [ DEBUG ] jdbc.driverClassName.greenplum:org.postgresql.Driver
+2015-05-08 15:39:42 [ main:6 ] - [ DEBUG ] jdbc.url.greenplum:jdbc:postgresql://gpv2devsegedw1.tmghealth.com:5433/devtmgdw_2
+2015-05-08 15:39:42 [ main:6 ] - [ DEBUG ] jdbc.username.greenplum:hma
+2015-05-08 15:39:42 [ main:6 ] - [ DEBUG ] jdbc.password.greenplum:NPXjs3aG
+2015-05-08 15:39:43 [ main:943 ] - [ DEBUG ] sql is select count(1) from gf_ods.checkresult is 1

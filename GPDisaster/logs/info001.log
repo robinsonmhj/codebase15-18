@@ -1,0 +1,535 @@
+2015-12-21 15:09:02 [ main:0 ] - [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1a51aee0: startup date [Mon Dec 21 15:09:02 EST 2015]; root of context hierarchy
+2015-12-21 15:09:02 [ main:47 ] - [ INFO ] Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-12-21 15:09:02 [ main:437 ] - [ INFO ] Loading properties file from URL [file:/C:/Users/hma/workspace/GPDisaster/target/classes/jdbc.properties]
+2015-12-21 15:09:04 [ getFileList3:2356 ] - [ INFO ] bank_account doesn't have any files
+2015-12-21 15:09:04 [ getFileList1:2356 ] - [ INFO ] agreement doesn't have any files
+2015-12-21 15:09:04 [ getFileList0:2356 ] - [ INFO ] adjustment doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2387 ] - [ INFO ] bank doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2449 ] - [ INFO ] billing_entity doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2496 ] - [ INFO ] billing_entity_contact doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2543 ] - [ INFO ] billing_entity_detail doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2590 ] - [ INFO ] billing_entity_schedule doesn't have any files
+2015-12-21 15:09:04 [ getFileList4:2621 ] - [ INFO ] benefit_group_name doesn't have any files
+2015-12-21 15:09:04 [ getFileList3:2621 ] - [ INFO ] benefit_groups has file [Ljava.lang.String;@5aa3626f
+2015-12-21 15:09:04 [ getFileList1:2621 ] - [ INFO ] benefit_package doesn't have any files
+2015-12-21 15:09:04 [ getFileList2:2636 ] - [ INFO ] billing_reconciliation doesn't have any files
+2015-12-21 15:09:05 [ getFileList0:2668 ] - [ INFO ] benefit_package_relation doesn't have any files
+2015-12-21 15:09:05 [ getFileList4:2668 ] - [ INFO ] billing_schedule doesn't have any files
+2015-12-21 15:09:05 [ getFileList3:2668 ] - [ INFO ] billing_source doesn't have any files
+2015-12-21 15:09:05 [ getFileList1:2668 ] - [ INFO ] charge_item doesn't have any files
+2015-12-21 15:09:05 [ getFileList0:2714 ] - [ INFO ] check_status doesn't have any files
+2015-12-21 15:09:05 [ getFileList0:2761 ] - [ INFO ] claim_cob doesn't have any files
+2015-12-21 15:09:05 [ getFileList2:2902 ] - [ INFO ] check has file [Ljava.lang.String;@1c9393e6
+2015-12-21 15:09:05 [ getFileList4:3026 ] - [ INFO ] claim has file [Ljava.lang.String;@1cd2efb2
+2015-12-21 15:09:05 [ getFileList1:3026 ] - [ INFO ] claim_attribute has file [Ljava.lang.String;@5c769de6
+2015-12-21 15:09:05 [ getFileList3:3026 ] - [ INFO ] claim_additional_diagnosis has file [Ljava.lang.String;@6f789676
+2015-12-21 15:09:05 [ getFileList2:3026 ] - [ INFO ] claim_hospital doesn't have any files
+2015-12-21 15:09:05 [ getFileList2:3073 ] - [ INFO ] claim_reduction_detail doesn't have any files
+2015-12-21 15:09:05 [ getFileList3:3073 ] - [ INFO ] claim_payment_reduction doesn't have any files
+2015-12-21 15:09:05 [ getFileList0:3120 ] - [ INFO ] claim_detail has file [Ljava.lang.String;@55de5626
+2015-12-21 15:09:05 [ getFileList2:3120 ] - [ INFO ] claim_reduction_history doesn't have any files
+2015-12-21 15:09:05 [ getFileList2:3182 ] - [ INFO ] clients doesn't have any files
+2015-12-21 15:09:05 [ getFileList2:3260 ] - [ INFO ] cob_claim_diagnosis doesn't have any files
+2015-12-21 15:09:05 [ getFileList2:3307 ] - [ INFO ] cob_organization_person doesn't have any files
+2015-12-21 15:09:05 [ getFileList1:3354 ] - [ INFO ] claim_payment_detail has file [Ljava.lang.String;@24e337cd
+2015-12-21 15:09:05 [ getFileList4:3354 ] - [ INFO ] claim_payment has file [Ljava.lang.String;@416486a6
+2015-12-21 15:09:05 [ getFileList3:3401 ] - [ INFO ] claim_status has file [Ljava.lang.String;@2ec41dd4
+2015-12-21 15:09:05 [ getFileList0:3401 ] - [ INFO ] client_reference_data has file [Ljava.lang.String;@4d826148
+2015-12-21 15:09:05 [ getFileList2:3588 ] - [ INFO ] code_value has file [Ljava.lang.String;@2ac0e5b9
+2015-12-21 15:09:05 [ getFileList1:3635 ] - [ INFO ] communication has file [Ljava.lang.String;@5e29ea9c
+2015-12-21 15:09:05 [ getFileList4:3635 ] - [ INFO ] complaint has file [Ljava.lang.String;@11e9d810
+2015-12-21 15:09:06 [ getFileList3:3682 ] - [ INFO ] complaint_status has file [Ljava.lang.String;@f680ba0
+2015-12-21 15:09:06 [ getFileList0:3682 ] - [ INFO ] contact has file [Ljava.lang.String;@77d33d46
+2015-12-21 15:09:06 [ getFileList3:3728 ] - [ INFO ] entity_bank_account doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:3728 ] - [ INFO ] etl_metadata doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:3775 ] - [ INFO ] exhibit_group doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:3791 ] - [ INFO ] exhibit doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:3838 ] - [ INFO ] exhibit_group_exhibit doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:3869 ] - [ INFO ] contact_type_contact has file [Ljava.lang.String;@52057ee6
+2015-12-21 15:09:06 [ getFileList0:3884 ] - [ INFO ] file_transfer_run doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:3916 ] - [ INFO ] file_transfer_stat doesn't have any files
+2015-12-21 15:09:06 [ getFileList4:3916 ] - [ INFO ] electronic_address has file [Ljava.lang.String;@66ce581b
+2015-12-21 15:09:06 [ getFileList1:3916 ] - [ INFO ] diagnosis_code doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:3931 ] - [ INFO ] general_ledger doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:3962 ] - [ INFO ] general_ledger_map doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4009 ] - [ INFO ] invoice doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4056 ] - [ INFO ] invoice_detail doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:4056 ] - [ INFO ] explanation_code has file [Ljava.lang.String;@74fa8957
+2015-12-21 15:09:06 [ getFileList2:4103 ] - [ INFO ] invoice_status doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:4103 ] - [ INFO ] lep_appeal doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4150 ] - [ INFO ] lep_appeal_decision doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:4150 ] - [ INFO ] letter doesn't have any files
+2015-12-21 15:09:06 [ getFileList4:4196 ] - [ INFO ] group_relation has file [Ljava.lang.String;@6c4eeac0
+2015-12-21 15:09:06 [ getFileList2:4196 ] - [ INFO ] letter_detail doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:4196 ] - [ INFO ] letter_job doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:4212 ] - [ INFO ] inquiry has file [Ljava.lang.String;@31161acd
+2015-12-21 15:09:06 [ getFileList1:4212 ] - [ INFO ] groups has file [Ljava.lang.String;@2239a1e8
+2015-12-21 15:09:06 [ getFileList4:4243 ] - [ INFO ] letter_register doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4243 ] - [ INFO ] letter_work_item doesn't have any files
+2015-12-21 15:09:06 [ getFileList3:4243 ] - [ INFO ] line_additional_diagnosis doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:4259 ] - [ INFO ] line_disallow_explanation doesn't have any files
+2015-12-21 15:09:06 [ getFileList1:4259 ] - [ INFO ] line_procedure_modifier doesn't have any files
+2015-12-21 15:09:06 [ getFileList4:4290 ] - [ INFO ] marx_calendar doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4290 ] - [ INFO ] note doesn't have any files
+2015-12-21 15:09:06 [ getFileList1:4306 ] - [ INFO ] organization_event doesn't have any files
+2015-12-21 15:09:06 [ getFileList2:4337 ] - [ INFO ] payment doesn't have any files
+2015-12-21 15:09:06 [ getFileList1:4337 ] - [ INFO ] person_cob doesn't have any files
+2015-12-21 15:09:06 [ getFileList0:4524 ] - [ INFO ] organization_contact_type has file [Ljava.lang.String;@75b497e5
+2015-12-21 15:09:06 [ getFileList4:4571 ] - [ INFO ] organizations has file [Ljava.lang.String;@236077c2
+2015-12-21 15:09:06 [ getFileList3:4571 ] - [ INFO ] organization_code has file [Ljava.lang.String;@125673b3
+2015-12-21 15:09:06 [ getFileList2:4618 ] - [ INFO ] person_code has file [Ljava.lang.String;@69c5f62c
+2015-12-21 15:09:06 [ getFileList1:4618 ] - [ INFO ] person_contact has file [Ljava.lang.String;@43a4f8f4
+2015-12-21 15:09:06 [ getFileList3:4618 ] - [ INFO ] person_event_status doesn't have any files
+2015-12-21 15:09:07 [ getFileList2:4664 ] - [ INFO ] person_event_status_reason doesn't have any files
+2015-12-21 15:09:07 [ getFileList3:4664 ] - [ INFO ] person_lep_profile doesn't have any files
+2015-12-21 15:09:07 [ getFileList2:4711 ] - [ INFO ] person_lep_profile_record doesn't have any files
+2015-12-21 15:09:07 [ getFileList0:4805 ] - [ INFO ] person_event has file [Ljava.lang.String;@3d47dde
+2015-12-21 15:09:07 [ getFileList4:4867 ] - [ INFO ] person_event_attribute has file [Ljava.lang.String;@73937bc8
+2015-12-21 15:09:07 [ getFileList1:4898 ] - [ INFO ] person_lep_event doesn't have any files
+2015-12-21 15:09:07 [ getFileList3:4992 ] - [ INFO ] person_organization_relation has file [Ljava.lang.String;@57a3c2bf
+2015-12-21 15:09:07 [ getFileList2:4992 ] - [ INFO ] person_payment_options doesn't have any files
+2015-12-21 15:09:07 [ getFileList3:5039 ] - [ INFO ] person_work_item doesn't have any files
+2015-12-21 15:09:07 [ getFileList0:5086 ] - [ INFO ] person_relation has file [Ljava.lang.String;@4046b68c
+2015-12-21 15:09:07 [ getFileList4:5132 ] - [ INFO ] person_role has file [Ljava.lang.String;@627ac24b
+2015-12-21 15:09:07 [ getFileList1:5179 ] - [ INFO ] person_subsidy_profile doesn't have any files
+2015-12-21 15:09:07 [ getFileList2:5273 ] - [ INFO ] persons has file [Ljava.lang.String;@6969fc6f
+2015-12-21 15:09:07 [ getFileList3:5320 ] - [ INFO ] phone has file [Ljava.lang.String;@2d3c117a
+2015-12-21 15:09:07 [ getFileList2:5320 ] - [ INFO ] premium doesn't have any files
+2015-12-21 15:09:07 [ getFileList3:5351 ] - [ INFO ] premium_category doesn't have any files
+2015-12-21 15:09:07 [ getFileList0:5366 ] - [ INFO ] plan_memberships has file [Ljava.lang.String;@429f77c9
+2015-12-21 15:09:07 [ getFileList2:5366 ] - [ INFO ] premium_part doesn't have any files
+2015-12-21 15:09:07 [ getFileList3:5398 ] - [ INFO ] premium_table doesn't have any files
+2015-12-21 15:09:07 [ getFileList2:5413 ] - [ INFO ] receipt doesn't have any files
+2015-12-21 15:09:07 [ getFileList4:5413 ] - [ INFO ] pos_code doesn't have any files
+2015-12-21 15:09:07 [ getFileList1:5460 ] - [ INFO ] postal_address has file [Ljava.lang.String;@73714f4a
+2015-12-21 15:09:07 [ getFileList2:5460 ] - [ INFO ] returned_mail doesn't have any files
+2015-12-21 15:09:07 [ getFileList4:5460 ] - [ INFO ] revenue_code doesn't have any files
+2015-12-21 15:09:07 [ getFileList1:5507 ] - [ INFO ] service_code doesn't have any files
+2015-12-21 15:09:07 [ getFileList4:5507 ] - [ INFO ] topic_attribute doesn't have any files
+2015-12-21 15:09:07 [ getFileList4:5554 ] - [ INFO ] topic_relation doesn't have any files
+2015-12-21 15:09:07 [ getFileList1:5554 ] - [ INFO ] topic_communication doesn't have any files
+2015-12-21 15:09:07 [ getFileList0:5632 ] - [ INFO ] procedure_code has file [Ljava.lang.String;@140cbe7c
+2015-12-21 15:09:08 [ getFileList3:5679 ] - [ INFO ] reference_data has file [Ljava.lang.String;@50adc92c
+2015-12-21 15:09:08 [ getFileList2:5725 ] - [ INFO ] topic has file [Ljava.lang.String;@41729115
+2015-12-21 15:09:08 [ getFileList4:5819 ] - [ INFO ] um_activity has file [Ljava.lang.String;@48931b44
+2015-12-21 15:09:08 [ getFileList1:5819 ] - [ INFO ] um_diagnosis_line has file [Ljava.lang.String;@31e33295
+2015-12-21 15:09:08 [ getFileList4:5866 ] - [ INFO ] um_inpatient_status doesn't have any files
+2015-12-21 15:09:08 [ getFileList0:5913 ] - [ INFO ] um_diagnosis_set has file [Ljava.lang.String;@3b0dedc9
+2015-12-21 15:09:08 [ getFileList3:5944 ] - [ INFO ] um_inpatient doesn't have any files
+2015-12-21 15:09:08 [ getFileList2:6037 ] - [ INFO ] um_inpatient_review doesn't have any files
+2015-12-21 15:09:08 [ getFileList2:6084 ] - [ INFO ] unapplied_cash doesn't have any files
+2015-12-21 15:09:08 [ getFileList1:6131 ] - [ INFO ] um_inpatient_stay_length doesn't have any files
+2015-12-21 15:09:08 [ getFileList4:6178 ] - [ INFO ] um_review has file [Ljava.lang.String;@f764569
+2015-12-21 15:09:08 [ getFileList0:6225 ] - [ INFO ] um_service has file [Ljava.lang.String;@1dc6f86d
+2015-12-21 15:09:08 [ getFileList3:6271 ] - [ INFO ] um_service_override doesn't have any files
+2015-12-21 15:09:08 [ formatFileList2:6381 ] - [ INFO ] process file benefit_groups_1449535019849.txt using 94
+2015-12-21 15:09:08 [ formatFileList2:6381 ] - [ INFO ] processed file benefit_groups_1449535019849.txt
+2015-12-21 15:09:08 [ formatFileList3:6381 ] - [ INFO ] process file check_1450461617381.txt using 94
+2015-12-21 15:09:08 [ formatFileList3:6381 ] - [ INFO ] processed file check_1450461617381.txt
+2015-12-21 15:09:08 [ formatFileList4:6412 ] - [ INFO ] process file claim_additional_diagnosis_1449534832469.txt using 109
+2015-12-21 15:09:08 [ formatFileList4:6412 ] - [ INFO ] processed file claim_additional_diagnosis_1449534832469.txt
+2015-12-21 15:09:08 [ formatFileList0:6443 ] - [ INFO ] process file claim_1449533488122.txt using 140
+2015-12-21 15:09:08 [ formatFileList0:6443 ] - [ INFO ] processed file claim_1449533488122.txt
+2015-12-21 15:09:08 [ formatFileList2:6474 ] - [ INFO ] process file benefit_groups_1450463031951.txt using 93
+2015-12-21 15:09:08 [ formatFileList2:6474 ] - [ INFO ] processed file benefit_groups_1450463031951.txt
+2015-12-21 15:09:08 [ formatFileList1:6521 ] - [ INFO ] process file claim_attribute_1450463224468.txt using 218
+2015-12-21 15:09:08 [ formatFileList1:6521 ] - [ INFO ] processed file claim_attribute_1450463224468.txt
+2015-12-21 15:09:09 [ formatFileList4:6661 ] - [ INFO ] process file claim_additional_diagnosis_1450463031927.txt using 249
+2015-12-21 15:09:09 [ formatFileList4:6661 ] - [ INFO ] processed file claim_additional_diagnosis_1450463031927.txt
+2015-12-21 15:09:10 [ formatFileList3:7956 ] - [ INFO ] check,write to file using 1575
+2015-12-21 15:09:10 [ formatFileList2:7987 ] - [ INFO ] benefit_groups,write to file using 1513
+2015-12-21 15:09:10 [ formatFileList1:8065 ] - [ INFO ] claim_attribute,write to file using 1544
+2015-12-21 15:09:10 [ formatFileList2:8065 ] - [ INFO ] process file claim_payment_detail_1449533487809.txt using 78
+2015-12-21 15:09:10 [ formatFileList2:8065 ] - [ INFO ] processed file claim_payment_detail_1449533487809.txt
+2015-12-21 15:09:10 [ formatFileList4:8113 ] - [ INFO ] claim_additional_diagnosis,write to file using 1452
+2015-12-21 15:09:10 [ formatFileList3:8113 ] - [ INFO ] process file claim_detail_1449533488122.txt using 157
+2015-12-21 15:09:10 [ formatFileList3:8113 ] - [ INFO ] processed file claim_detail_1449533488122.txt
+2015-12-21 15:09:10 [ formatFileList1:8160 ] - [ INFO ] process file claim_payment_1449533488075.txt using 95
+2015-12-21 15:09:10 [ formatFileList1:8160 ] - [ INFO ] processed file claim_payment_1449533488075.txt
+2015-12-21 15:09:10 [ formatFileList4:8207 ] - [ INFO ] process file claim_status_1449533488169.txt using 94
+2015-12-21 15:09:10 [ formatFileList4:8207 ] - [ INFO ] processed file claim_status_1449533488169.txt
+2015-12-21 15:09:10 [ formatFileList1:8269 ] - [ INFO ] process file claim_payment_1450461617406.txt using 109
+2015-12-21 15:09:10 [ formatFileList1:8269 ] - [ INFO ] processed file claim_payment_1450461617406.txt
+2015-12-21 15:09:10 [ formatFileList2:8269 ] - [ INFO ] process file claim_payment_detail_1450461617370.txt using 204
+2015-12-21 15:09:10 [ formatFileList2:8269 ] - [ INFO ] processed file claim_payment_detail_1450461617370.txt
+2015-12-21 15:09:10 [ formatFileList4:8412 ] - [ INFO ] process file claim_status_1450461617393.txt using 205
+2015-12-21 15:09:10 [ formatFileList4:8412 ] - [ INFO ] processed file claim_status_1450461617393.txt
+2015-12-21 15:09:10 [ formatFileList3:8427 ] - [ INFO ] process file claim_detail_1450461447003.txt using 314
+2015-12-21 15:09:10 [ formatFileList3:8427 ] - [ INFO ] processed file claim_detail_1450461447003.txt
+2015-12-21 15:09:11 [ formatFileList3:9006 ] - [ INFO ] process file claim_detail_1450461617343.txt using 579
+2015-12-21 15:09:11 [ formatFileList3:9006 ] - [ INFO ] processed file claim_detail_1450461617343.txt
+2015-12-21 15:09:12 [ formatFileList1:9678 ] - [ INFO ] claim_payment,write to file using 1409
+2015-12-21 15:09:12 [ formatFileList2:9725 ] - [ INFO ] claim_payment_detail,write to file using 1456
+2015-12-21 15:09:12 [ formatFileList1:9772 ] - [ INFO ] process file client_reference_data_1449534681121.txt using 94
+2015-12-21 15:09:12 [ formatFileList1:9772 ] - [ INFO ] processed file client_reference_data_1449534681121.txt
+2015-12-21 15:09:12 [ formatFileList1:9897 ] - [ INFO ] process file client_reference_data_1449783207669.txt using 125
+2015-12-21 15:09:12 [ formatFileList1:9897 ] - [ INFO ] processed file client_reference_data_1449783207669.txt
+2015-12-21 15:09:12 [ formatFileList4:9944 ] - [ INFO ] claim_status,write to file using 1532
+2015-12-21 15:09:12 [ formatFileList4:10038 ] - [ INFO ] process file communication_1449534832438.txt using 94
+2015-12-21 15:09:12 [ formatFileList4:10038 ] - [ INFO ] processed file communication_1449534832438.txt
+2015-12-21 15:09:12 [ formatFileList4:10132 ] - [ INFO ] process file communication_1449783967439.txt using 94
+2015-12-21 15:09:12 [ formatFileList4:10132 ] - [ INFO ] processed file communication_1449783967439.txt
+2015-12-21 15:09:12 [ formatFileList4:10288 ] - [ INFO ] process file communication_1450462807580.txt using 156
+2015-12-21 15:09:12 [ formatFileList4:10288 ] - [ INFO ] processed file communication_1450462807580.txt
+2015-12-21 15:09:12 [ formatFileList3:10506 ] - [ INFO ] claim_detail,write to file using 1500
+2015-12-21 15:09:12 [ formatFileList3:10631 ] - [ INFO ] process file complaint_1449534681152.txt using 125
+2015-12-21 15:09:12 [ formatFileList3:10631 ] - [ INFO ] processed file complaint_1449534681152.txt
+2015-12-21 15:09:13 [ formatFileList3:10740 ] - [ INFO ] process file complaint_1449783967485.txt using 109
+2015-12-21 15:09:13 [ formatFileList3:10740 ] - [ INFO ] processed file complaint_1449783967485.txt
+2015-12-21 15:09:13 [ formatFileList3:10849 ] - [ INFO ] process file complaint_1450462807622.txt using 109
+2015-12-21 15:09:13 [ formatFileList3:10849 ] - [ INFO ] processed file complaint_1450462807622.txt
+2015-12-21 15:09:13 [ formatFileList1:11239 ] - [ INFO ] client_reference_data,write to file using 1342
+2015-12-21 15:09:13 [ formatFileList1:11348 ] - [ INFO ] process file complaint_status_1449534681121.txt using 109
+2015-12-21 15:09:13 [ formatFileList1:11348 ] - [ INFO ] processed file complaint_status_1449534681121.txt
+2015-12-21 15:09:13 [ formatFileList1:11473 ] - [ INFO ] process file complaint_status_1449783967423.txt using 125
+2015-12-21 15:09:13 [ formatFileList1:11473 ] - [ INFO ] processed file complaint_status_1449783967423.txt
+2015-12-21 15:09:13 [ formatFileList4:11598 ] - [ INFO ] communication,write to file using 1310
+2015-12-21 15:09:13 [ formatFileList1:11614 ] - [ INFO ] process file complaint_status_1450462807569.txt using 141
+2015-12-21 15:09:13 [ formatFileList1:11614 ] - [ INFO ] processed file complaint_status_1450462807569.txt
+2015-12-21 15:09:14 [ formatFileList3:12114 ] - [ INFO ] complaint,write to file using 1265
+2015-12-21 15:09:15 [ formatFileList1:12831 ] - [ INFO ] complaint_status,write to file using 1217
+2015-12-21 15:09:16 [ formatFileList1:14563 ] - [ INFO ] process file electronic_address_1449533487794.txt using 1732
+2015-12-21 15:09:16 [ formatFileList1:14563 ] - [ INFO ] processed file electronic_address_1449533487794.txt
+2015-12-21 15:09:17 [ formatFileList1:14688 ] - [ INFO ] process file electronic_address_1450288370939.txt using 125
+2015-12-21 15:09:17 [ formatFileList1:14688 ] - [ INFO ] processed file electronic_address_1450288370939.txt
+2015-12-21 15:09:17 [ formatFileList1:14797 ] - [ INFO ] process file electronic_address_1450301234693.txt using 109
+2015-12-21 15:09:17 [ formatFileList1:14797 ] - [ INFO ] processed file electronic_address_1450301234693.txt
+2015-12-21 15:09:17 [ formatFileList1:14906 ] - [ INFO ] process file electronic_address_1450304270744.txt using 109
+2015-12-21 15:09:17 [ formatFileList1:14906 ] - [ INFO ] processed file electronic_address_1450304270744.txt
+2015-12-21 15:09:17 [ formatFileList1:15031 ] - [ INFO ] process file electronic_address_1450305004561.txt using 125
+2015-12-21 15:09:17 [ formatFileList1:15031 ] - [ INFO ] processed file electronic_address_1450305004561.txt
+2015-12-21 15:09:17 [ formatFileList1:15171 ] - [ INFO ] process file electronic_address_1450306187115.txt using 140
+2015-12-21 15:09:17 [ formatFileList1:15171 ] - [ INFO ] processed file electronic_address_1450306187115.txt
+2015-12-21 15:09:17 [ formatFileList1:15281 ] - [ INFO ] process file electronic_address_1450463031845.txt using 110
+2015-12-21 15:09:17 [ formatFileList1:15281 ] - [ INFO ] processed file electronic_address_1450463031845.txt
+2015-12-21 15:09:18 [ formatFileList1:16373 ] - [ INFO ] electronic_address,write to file using 1092
+2015-12-21 15:09:18 [ formatFileList3:16484 ] - [ INFO ] process file contact_type_contact_1449533487825.txt using 4370
+2015-12-21 15:09:18 [ formatFileList3:16499 ] - [ INFO ] processed file contact_type_contact_1449533487825.txt
+2015-12-21 15:09:18 [ formatFileList1:16593 ] - [ INFO ] process file explanation_code_1449533487872.txt using 220
+2015-12-21 15:09:18 [ formatFileList1:16593 ] - [ INFO ] processed file explanation_code_1449533487872.txt
+2015-12-21 15:09:18 [ formatFileList3:16593 ] - [ INFO ] process file contact_type_contact_1450288370970.txt using 94
+2015-12-21 15:09:18 [ formatFileList3:16593 ] - [ INFO ] processed file contact_type_contact_1450288370970.txt
+2015-12-21 15:09:19 [ formatFileList3:16702 ] - [ INFO ] process file contact_type_contact_1450301234724.txt using 109
+2015-12-21 15:09:19 [ formatFileList3:16702 ] - [ INFO ] processed file contact_type_contact_1450301234724.txt
+2015-12-21 15:09:19 [ formatFileList3:16811 ] - [ INFO ] process file contact_type_contact_1450304270759.txt using 109
+2015-12-21 15:09:19 [ formatFileList3:16811 ] - [ INFO ] processed file contact_type_contact_1450304270759.txt
+2015-12-21 15:09:19 [ formatFileList3:16936 ] - [ INFO ] process file contact_type_contact_1450305004577.txt using 125
+2015-12-21 15:09:19 [ formatFileList3:16936 ] - [ INFO ] processed file contact_type_contact_1450305004577.txt
+2015-12-21 15:09:19 [ formatFileList3:17045 ] - [ INFO ] process file contact_type_contact_1450306034521.txt using 109
+2015-12-21 15:09:19 [ formatFileList3:17045 ] - [ INFO ] processed file contact_type_contact_1450306034521.txt
+2015-12-21 15:09:19 [ formatFileList3:17155 ] - [ INFO ] process file contact_type_contact_1450306187147.txt using 110
+2015-12-21 15:09:19 [ formatFileList3:17155 ] - [ INFO ] processed file contact_type_contact_1450306187147.txt
+2015-12-21 15:09:19 [ formatFileList3:17264 ] - [ INFO ] process file contact_type_contact_1450463031867.txt using 109
+2015-12-21 15:09:19 [ formatFileList3:17264 ] - [ INFO ] processed file contact_type_contact_1450463031867.txt
+2015-12-21 15:09:20 [ formatFileList1:17685 ] - [ INFO ] explanation_code,write to file using 1092
+2015-12-21 15:09:20 [ formatFileList3:18512 ] - [ INFO ] contact_type_contact,write to file using 1248
+2015-12-21 15:09:21 [ formatFileList3:18653 ] - [ INFO ] process file inquiry_1449534681137.txt using 141
+2015-12-21 15:09:21 [ formatFileList3:18653 ] - [ INFO ] processed file inquiry_1449534681137.txt
+2015-12-21 15:09:21 [ formatFileList3:18762 ] - [ INFO ] process file inquiry_1449783967454.txt using 109
+2015-12-21 15:09:21 [ formatFileList3:18762 ] - [ INFO ] processed file inquiry_1449783967454.txt
+2015-12-21 15:09:21 [ formatFileList1:18778 ] - [ INFO ] process file group_relation_1449533854163.txt using 1093
+2015-12-21 15:09:21 [ formatFileList1:18778 ] - [ INFO ] processed file group_relation_1449533854163.txt
+2015-12-21 15:09:21 [ formatFileList3:18872 ] - [ INFO ] process file inquiry_1450462807590.txt using 110
+2015-12-21 15:09:21 [ formatFileList3:18872 ] - [ INFO ] processed file inquiry_1450462807590.txt
+2015-12-21 15:09:22 [ formatFileList3:19932 ] - [ INFO ] inquiry,write to file using 1060
+2015-12-21 15:09:23 [ formatFileList1:21321 ] - [ INFO ] process file group_relation_1449535019771.txt using 2543
+2015-12-21 15:09:23 [ formatFileList1:21321 ] - [ INFO ] processed file group_relation_1449535019771.txt
+2015-12-21 15:09:23 [ formatFileList2:21430 ] - [ INFO ] process file code_value_1448929000666.txt using 11705
+2015-12-21 15:09:23 [ formatFileList2:21446 ] - [ INFO ] processed file code_value_1448929000666.txt
+2015-12-21 15:09:24 [ formatFileList3:21882 ] - [ INFO ] process file groups_1449534360832.txt using 1950
+2015-12-21 15:09:24 [ formatFileList3:21882 ] - [ INFO ] processed file groups_1449534360832.txt
+2015-12-21 15:09:24 [ formatFileList3:22007 ] - [ INFO ] process file groups_1449535019833.txt using 125
+2015-12-21 15:09:24 [ formatFileList3:22007 ] - [ INFO ] processed file groups_1449535019833.txt
+2015-12-21 15:09:24 [ formatFileList3:22132 ] - [ INFO ] process file groups_1450288371001.txt using 125
+2015-12-21 15:09:24 [ formatFileList3:22132 ] - [ INFO ] processed file groups_1450288371001.txt
+2015-12-21 15:09:24 [ formatFileList3:22257 ] - [ INFO ] process file groups_1450301234771.txt using 125
+2015-12-21 15:09:24 [ formatFileList3:22257 ] - [ INFO ] processed file groups_1450301234771.txt
+2015-12-21 15:09:24 [ formatFileList3:22366 ] - [ INFO ] process file groups_1450304270806.txt using 109
+2015-12-21 15:09:24 [ formatFileList3:22366 ] - [ INFO ] processed file groups_1450304270806.txt
+2015-12-21 15:09:24 [ formatFileList1:22397 ] - [ INFO ] process file group_relation_1449535186165.txt using 1076
+2015-12-21 15:09:24 [ formatFileList1:22397 ] - [ INFO ] processed file group_relation_1449535186165.txt
+2015-12-21 15:09:24 [ formatFileList3:22475 ] - [ INFO ] process file groups_1450305004608.txt using 109
+2015-12-21 15:09:24 [ formatFileList3:22475 ] - [ INFO ] processed file groups_1450305004608.txt
+2015-12-21 15:09:24 [ formatFileList1:22522 ] - [ INFO ] process file group_relation_1450463031879.txt using 125
+2015-12-21 15:09:24 [ formatFileList1:22522 ] - [ INFO ] processed file group_relation_1450463031879.txt
+2015-12-21 15:09:24 [ formatFileList3:22584 ] - [ INFO ] process file groups_1450306187178.txt using 109
+2015-12-21 15:09:24 [ formatFileList3:22584 ] - [ INFO ] processed file groups_1450306187178.txt
+2015-12-21 15:09:24 [ formatFileList1:22616 ] - [ INFO ] process file group_relation_1450463224423.txt using 94
+2015-12-21 15:09:24 [ formatFileList1:22616 ] - [ INFO ] processed file group_relation_1450463224423.txt
+2015-12-21 15:09:24 [ formatFileList3:22649 ] - [ INFO ] process file groups_1450361424514.txt using 65
+2015-12-21 15:09:24 [ formatFileList3:22649 ] - [ INFO ] processed file groups_1450361424514.txt
+2015-12-21 15:09:26 [ formatFileList1:23727 ] - [ INFO ] group_relation,write to file using 1111
+2015-12-21 15:09:28 [ formatFileList1:26084 ] - [ INFO ] process file organization_contact_type_1449534360754.txt using 2357
+2015-12-21 15:09:28 [ formatFileList1:26084 ] - [ INFO ] processed file organization_contact_type_1449534360754.txt
+2015-12-21 15:09:28 [ formatFileList1:26193 ] - [ INFO ] process file organization_contact_type_1450288370955.txt using 109
+2015-12-21 15:09:28 [ formatFileList1:26193 ] - [ INFO ] processed file organization_contact_type_1450288370955.txt
+2015-12-21 15:09:28 [ formatFileList1:26349 ] - [ INFO ] process file organization_contact_type_1450301234709.txt using 156
+2015-12-21 15:09:28 [ formatFileList1:26349 ] - [ INFO ] processed file organization_contact_type_1450301234709.txt
+2015-12-21 15:09:28 [ formatFileList1:26505 ] - [ INFO ] process file organization_contact_type_1450304270759.txt using 156
+2015-12-21 15:09:28 [ formatFileList1:26505 ] - [ INFO ] processed file organization_contact_type_1450304270759.txt
+2015-12-21 15:09:28 [ formatFileList1:26599 ] - [ INFO ] process file organization_contact_type_1450305004577.txt using 94
+2015-12-21 15:09:28 [ formatFileList1:26599 ] - [ INFO ] processed file organization_contact_type_1450305004577.txt
+2015-12-21 15:09:29 [ formatFileList1:26708 ] - [ INFO ] process file organization_contact_type_1450306187131.txt using 109
+2015-12-21 15:09:29 [ formatFileList1:26708 ] - [ INFO ] processed file organization_contact_type_1450306187131.txt
+2015-12-21 15:09:44 [ formatFileList3:42394 ] - [ INFO ] process file groups_1450415687528.txt using 19745
+2015-12-21 15:09:44 [ formatFileList3:42394 ] - [ INFO ] processed file groups_1450415687528.txt
+2015-12-21 15:09:49 [ formatFileList4:47341 ] - [ INFO ] process file contact_1448919877808.txt using 35743
+2015-12-21 15:09:49 [ formatFileList4:47341 ] - [ INFO ] processed file contact_1448919877808.txt
+2015-12-21 15:10:02 [ formatFileList1:60173 ] - [ INFO ] process file organization_contact_type_1450399529985.txt using 33465
+2015-12-21 15:10:02 [ formatFileList1:60173 ] - [ INFO ] processed file organization_contact_type_1450399529985.txt
+2015-12-21 15:10:03 [ formatFileList2:60797 ] - [ INFO ] process file code_value_1448929829562.txt using 39351
+2015-12-21 15:10:03 [ formatFileList2:60797 ] - [ INFO ] processed file code_value_1448929829562.txt
+2015-12-21 15:10:14 [ formatFileList4:72199 ] - [ INFO ] process file contact_1448920687891.txt using 24858
+2015-12-21 15:10:14 [ formatFileList4:72199 ] - [ INFO ] processed file contact_1448920687891.txt
+2015-12-21 15:10:17 [ formatFileList4:75305 ] - [ INFO ] process file contact_1449533488091.txt using 3106
+2015-12-21 15:10:17 [ formatFileList4:75305 ] - [ INFO ] processed file contact_1449533488091.txt
+2015-12-21 15:10:17 [ formatFileList4:75430 ] - [ INFO ] process file contact_1449783800278.txt using 125
+2015-12-21 15:10:17 [ formatFileList4:75430 ] - [ INFO ] processed file contact_1449783800278.txt
+2015-12-21 15:10:17 [ formatFileList4:75539 ] - [ INFO ] process file contact_1450288371017.txt using 109
+2015-12-21 15:10:17 [ formatFileList4:75539 ] - [ INFO ] processed file contact_1450288371017.txt
+2015-12-21 15:10:17 [ formatFileList4:75648 ] - [ INFO ] process file contact_1450301234787.txt using 109
+2015-12-21 15:10:18 [ formatFileList4:75664 ] - [ INFO ] processed file contact_1450301234787.txt
+2015-12-21 15:10:18 [ formatFileList4:75773 ] - [ INFO ] process file contact_1450304270822.txt using 109
+2015-12-21 15:10:18 [ formatFileList4:75773 ] - [ INFO ] processed file contact_1450304270822.txt
+2015-12-21 15:10:18 [ formatFileList4:75882 ] - [ INFO ] process file contact_1450305004624.txt using 109
+2015-12-21 15:10:18 [ formatFileList4:75882 ] - [ INFO ] processed file contact_1450305004624.txt
+2015-12-21 15:10:18 [ formatFileList4:76023 ] - [ INFO ] process file contact_1450306034521.txt using 141
+2015-12-21 15:10:18 [ formatFileList4:76023 ] - [ INFO ] processed file contact_1450306034521.txt
+2015-12-21 15:10:18 [ formatFileList4:76149 ] - [ INFO ] process file contact_1450306187194.txt using 126
+2015-12-21 15:10:18 [ formatFileList4:76149 ] - [ INFO ] processed file contact_1450306187194.txt
+2015-12-21 15:10:18 [ formatFileList4:76259 ] - [ INFO ] process file contact_1450462807644.txt using 110
+2015-12-21 15:10:18 [ formatFileList4:76259 ] - [ INFO ] processed file contact_1450462807644.txt
+2015-12-21 15:10:18 [ formatFileList4:76368 ] - [ INFO ] process file contact_1450463031940.txt using 109
+2015-12-21 15:10:18 [ formatFileList4:76368 ] - [ INFO ] processed file contact_1450463031940.txt
+2015-12-21 15:10:20 [ formatFileList4:77696 ] - [ INFO ] contact,write to file using 1328
+2015-12-21 15:10:21 [ formatFileList4:78959 ] - [ INFO ] process file organizations_1449534133263.txt using 1263
+2015-12-21 15:10:21 [ formatFileList4:78959 ] - [ INFO ] processed file organizations_1449534133263.txt
+2015-12-21 15:10:21 [ formatFileList4:79069 ] - [ INFO ] process file organizations_1449535019817.txt using 110
+2015-12-21 15:10:21 [ formatFileList4:79069 ] - [ INFO ] processed file organizations_1449535019817.txt
+2015-12-21 15:10:21 [ formatFileList4:79178 ] - [ INFO ] process file organizations_1450288370986.txt using 109
+2015-12-21 15:10:21 [ formatFileList4:79178 ] - [ INFO ] processed file organizations_1450288370986.txt
+2015-12-21 15:10:21 [ formatFileList4:79287 ] - [ INFO ] process file organizations_1450301234740.txt using 109
+2015-12-21 15:10:21 [ formatFileList4:79287 ] - [ INFO ] processed file organizations_1450301234740.txt
+2015-12-21 15:10:21 [ formatFileList4:79396 ] - [ INFO ] process file organizations_1450304270775.txt using 109
+2015-12-21 15:10:21 [ formatFileList4:79396 ] - [ INFO ] processed file organizations_1450304270775.txt
+2015-12-21 15:10:22 [ formatFileList4:80614 ] - [ INFO ] organizations,write to file using 1218
+2015-12-21 15:10:34 [ formatFileList3:92097 ] - [ INFO ] process file groups_1450418991704.txt using 49703
+2015-12-21 15:10:34 [ formatFileList3:92097 ] - [ INFO ] processed file groups_1450418991704.txt
+2015-12-21 15:10:47 [ formatFileList2:105157 ] - [ INFO ] process file code_value_1448930657521.txt using 44360
+2015-12-21 15:10:47 [ formatFileList2:105157 ] - [ INFO ] processed file code_value_1448930657521.txt
+2015-12-21 15:10:58 [ formatFileList1:116485 ] - [ INFO ] process file organization_contact_type_1450401023487.txt using 56312
+2015-12-21 15:10:58 [ formatFileList1:116485 ] - [ INFO ] processed file organization_contact_type_1450401023487.txt
+2015-12-21 15:12:45 [ formatFileList4:223646 ] - [ INFO ] process file organization_code_1448923193799.txt using 143032
+2015-12-21 15:12:45 [ formatFileList4:223646 ] - [ INFO ] processed file organization_code_1448923193799.txt
+2015-12-21 15:14:40 [ formatFileList1:338033 ] - [ INFO ] process file organization_contact_type_1450402246002.txt using 221548
+2015-12-21 15:14:40 [ formatFileList1:338033 ] - [ INFO ] processed file organization_contact_type_1450402246002.txt
+2015-12-21 15:14:46 [ formatFileList0:343852 ] - [ INFO ] process file claim_1450300052920.txt using 337409
+2015-12-21 15:14:46 [ formatFileList0:343852 ] - [ INFO ] processed file claim_1450300052920.txt
+2015-12-21 15:14:48 [ formatFileList0:346036 ] - [ INFO ] claim,write to file using 2184
+2015-12-21 15:14:48 [ formatFileList0:346114 ] - [ INFO ] process file person_code_1449533488184.txt using 78
+2015-12-21 15:14:48 [ formatFileList0:346114 ] - [ INFO ] processed file person_code_1449533488184.txt
+2015-12-21 15:14:48 [ formatFileList0:346223 ] - [ INFO ] process file person_code_1449783353798.txt using 109
+2015-12-21 15:14:48 [ formatFileList0:346223 ] - [ INFO ] processed file person_code_1449783353798.txt
+2015-12-21 15:14:48 [ formatFileList0:346332 ] - [ INFO ] process file person_code_1449783800294.txt using 109
+2015-12-21 15:14:48 [ formatFileList0:346332 ] - [ INFO ] processed file person_code_1449783800294.txt
+2015-12-21 15:14:48 [ formatFileList0:346441 ] - [ INFO ] process file person_code_1450461956394.txt using 109
+2015-12-21 15:14:48 [ formatFileList0:346441 ] - [ INFO ] processed file person_code_1450461956394.txt
+2015-12-21 15:14:48 [ formatFileList0:346550 ] - [ INFO ] process file person_code_1450462605231.txt using 109
+2015-12-21 15:14:48 [ formatFileList0:346550 ] - [ INFO ] processed file person_code_1450462605231.txt
+2015-12-21 15:14:50 [ formatFileList0:347689 ] - [ INFO ] person_code,write to file using 1139
+2015-12-21 15:15:02 [ formatFileList4:359985 ] - [ INFO ] process file organization_code_1448924020258.txt using 136339
+2015-12-21 15:15:02 [ formatFileList4:359985 ] - [ INFO ] processed file organization_code_1448924020258.txt
+2015-12-21 15:15:17 [ formatFileList1:374873 ] - [ INFO ] process file organization_contact_type_1450403811715.txt using 36840
+2015-12-21 15:15:17 [ formatFileList1:374873 ] - [ INFO ] processed file organization_contact_type_1450403811715.txt
+2015-12-21 15:15:27 [ formatFileList0:384765 ] - [ INFO ] process file person_contact_1448921520240.txt using 37076
+2015-12-21 15:15:27 [ formatFileList0:384781 ] - [ INFO ] processed file person_contact_1448921520240.txt
+2015-12-21 15:16:03 [ formatFileList4:421124 ] - [ INFO ] process file organization_code_1448924844810.txt using 61139
+2015-12-21 15:16:03 [ formatFileList4:421124 ] - [ INFO ] processed file organization_code_1448924844810.txt
+2015-12-21 15:17:49 [ formatFileList1:527634 ] - [ INFO ] process file organization_contact_type_1450405209546.txt using 152761
+2015-12-21 15:17:49 [ formatFileList1:527634 ] - [ INFO ] processed file organization_contact_type_1450405209546.txt
+2015-12-21 15:17:53 [ formatFileList1:530770 ] - [ INFO ] process file organization_contact_type_1450409183772.txt using 3136
+2015-12-21 15:17:53 [ formatFileList1:530770 ] - [ INFO ] processed file organization_contact_type_1450409183772.txt
+2015-12-21 15:17:53 [ formatFileList1:530879 ] - [ INFO ] process file organization_contact_type_1450463031857.txt using 109
+2015-12-21 15:17:53 [ formatFileList1:530879 ] - [ INFO ] processed file organization_contact_type_1450463031857.txt
+2015-12-21 15:17:54 [ formatFileList0:531690 ] - [ INFO ] process file person_contact_1448922355824.txt using 146909
+2015-12-21 15:17:54 [ formatFileList0:531690 ] - [ INFO ] processed file person_contact_1448922355824.txt
+2015-12-21 15:17:54 [ formatFileList0:531784 ] - [ INFO ] process file person_contact_1449783967501.txt using 94
+2015-12-21 15:17:54 [ formatFileList0:531784 ] - [ INFO ] processed file person_contact_1449783967501.txt
+2015-12-21 15:17:54 [ formatFileList0:531893 ] - [ INFO ] process file person_contact_1450462605220.txt using 109
+2015-12-21 15:17:54 [ formatFileList0:531893 ] - [ INFO ] processed file person_contact_1450462605220.txt
+2015-12-21 15:17:55 [ formatFileList1:532969 ] - [ INFO ] organization_contact_type,write to file using 2090
+2015-12-21 15:17:55 [ formatFileList0:533500 ] - [ INFO ] person_contact,write to file using 1607
+2015-12-21 15:17:55 [ formatFileList0:533625 ] - [ INFO ] process file person_event_attribute_1449783800200.txt using 125
+2015-12-21 15:17:55 [ formatFileList0:533625 ] - [ INFO ] processed file person_event_attribute_1449783800200.txt
+2015-12-21 15:17:56 [ formatFileList0:533781 ] - [ INFO ] process file person_event_attribute_1450461133992.txt using 156
+2015-12-21 15:17:56 [ formatFileList0:533781 ] - [ INFO ] processed file person_event_attribute_1450461133992.txt
+2015-12-21 15:17:56 [ formatFileList0:534000 ] - [ INFO ] process file person_event_attribute_1450461290768.txt using 219
+2015-12-21 15:17:56 [ formatFileList0:534000 ] - [ INFO ] processed file person_event_attribute_1450461290768.txt
+2015-12-21 15:17:56 [ formatFileList0:534109 ] - [ INFO ] process file person_event_attribute_1450462605187.txt using 109
+2015-12-21 15:17:56 [ formatFileList0:534109 ] - [ INFO ] processed file person_event_attribute_1450462605187.txt
+2015-12-21 15:17:57 [ formatFileList0:535388 ] - [ INFO ] person_event_attribute,write to file using 1279
+2015-12-21 15:17:58 [ formatFileList0:536622 ] - [ INFO ] process file person_organization_relation_1449533488153.txt using 1234
+2015-12-21 15:17:58 [ formatFileList0:536622 ] - [ INFO ] processed file person_organization_relation_1449533488153.txt
+2015-12-21 15:17:59 [ formatFileList0:537308 ] - [ INFO ] process file person_organization_relation_1449534360801.txt using 686
+2015-12-21 15:17:59 [ formatFileList0:537308 ] - [ INFO ] processed file person_organization_relation_1449534360801.txt
+2015-12-21 15:17:59 [ formatFileList0:537433 ] - [ INFO ] process file person_organization_relation_1449783353767.txt using 125
+2015-12-21 15:17:59 [ formatFileList0:537433 ] - [ INFO ] processed file person_organization_relation_1449783353767.txt
+2015-12-21 15:18:19 [ formatFileList0:556873 ] - [ INFO ] process file person_organization_relation_1450378512908.txt using 19440
+2015-12-21 15:18:19 [ formatFileList0:556873 ] - [ INFO ] processed file person_organization_relation_1450378512908.txt
+2015-12-21 15:18:50 [ formatFileList1:588555 ] - [ INFO ] process file person_event_1449528894840.txt using 55586
+2015-12-21 15:18:50 [ formatFileList1:588555 ] - [ INFO ] processed file person_event_1449528894840.txt
+2015-12-21 15:18:53 [ formatFileList0:590709 ] - [ INFO ] process file person_organization_relation_1450379271560.txt using 33836
+2015-12-21 15:18:53 [ formatFileList0:590709 ] - [ INFO ] processed file person_organization_relation_1450379271560.txt
+2015-12-21 15:19:23 [ formatFileList0:621625 ] - [ INFO ] process file person_organization_relation_1450380035799.txt using 30916
+2015-12-21 15:19:23 [ formatFileList0:621625 ] - [ INFO ] processed file person_organization_relation_1450380035799.txt
+2015-12-21 15:19:48 [ formatFileList0:645934 ] - [ INFO ] person_organization_relation,write to file using 24309
+2015-12-21 15:19:49 [ formatFileList1:647245 ] - [ INFO ] process file person_event_1449529618406.txt using 58690
+2015-12-21 15:19:49 [ formatFileList1:647245 ] - [ INFO ] processed file person_event_1449529618406.txt
+2015-12-21 15:20:05 [ formatFileList0:663012 ] - [ INFO ] process file person_relation_1448922355715.txt using 17078
+2015-12-21 15:20:05 [ formatFileList0:663012 ] - [ INFO ] processed file person_relation_1448922355715.txt
+2015-12-21 15:20:14 [ formatFileList0:672142 ] - [ INFO ] process file person_relation_1448923194033.txt using 9130
+2015-12-21 15:20:14 [ formatFileList0:672142 ] - [ INFO ] processed file person_relation_1448923194033.txt
+2015-12-21 15:20:14 [ formatFileList0:672236 ] - [ INFO ] process file person_relation_1449533488059.txt using 94
+2015-12-21 15:20:14 [ formatFileList0:672236 ] - [ INFO ] processed file person_relation_1449533488059.txt
+2015-12-21 15:20:14 [ formatFileList0:672345 ] - [ INFO ] process file person_relation_1449783353767.txt using 109
+2015-12-21 15:20:14 [ formatFileList0:672345 ] - [ INFO ] processed file person_relation_1449783353767.txt
+2015-12-21 15:20:14 [ formatFileList0:672454 ] - [ INFO ] process file person_relation_1449784266618.txt using 109
+2015-12-21 15:20:14 [ formatFileList0:672454 ] - [ INFO ] processed file person_relation_1449784266618.txt
+2015-12-21 15:20:14 [ formatFileList0:672563 ] - [ INFO ] process file person_relation_1450461956371.txt using 109
+2015-12-21 15:20:14 [ formatFileList0:672563 ] - [ INFO ] processed file person_relation_1450461956371.txt
+2015-12-21 15:20:16 [ formatFileList0:673858 ] - [ INFO ] person_relation,write to file using 1295
+2015-12-21 15:20:16 [ formatFileList0:673953 ] - [ INFO ] process file person_role_1449533488184.txt using 95
+2015-12-21 15:20:16 [ formatFileList0:673953 ] - [ INFO ] processed file person_role_1449533488184.txt
+2015-12-21 15:20:16 [ formatFileList0:674592 ] - [ INFO ] process file person_role_1449533854178.txt using 639
+2015-12-21 15:20:16 [ formatFileList0:674592 ] - [ INFO ] processed file person_role_1449533854178.txt
+2015-12-21 15:20:17 [ formatFileList0:674686 ] - [ INFO ] process file person_role_1449783353782.txt using 94
+2015-12-21 15:20:17 [ formatFileList0:674686 ] - [ INFO ] processed file person_role_1449783353782.txt
+2015-12-21 15:20:17 [ formatFileList0:674795 ] - [ INFO ] process file person_role_1449783967501.txt using 109
+2015-12-21 15:20:17 [ formatFileList0:674795 ] - [ INFO ] processed file person_role_1449783967501.txt
+2015-12-21 15:20:48 [ formatFileList0:705826 ] - [ INFO ] process file person_role_1450297834343.txt using 31031
+2015-12-21 15:20:48 [ formatFileList0:705826 ] - [ INFO ] processed file person_role_1450297834343.txt
+2015-12-21 15:20:49 [ formatFileList1:707074 ] - [ INFO ] process file person_event_1449530494335.txt using 59829
+2015-12-21 15:20:49 [ formatFileList1:707074 ] - [ INFO ] processed file person_event_1449530494335.txt
+2015-12-21 15:21:25 [ formatFileList0:743392 ] - [ INFO ] process file person_role_1450298513457.txt using 37566
+2015-12-21 15:21:25 [ formatFileList0:743392 ] - [ INFO ] processed file person_role_1450298513457.txt
+2015-12-21 15:21:36 [ formatFileList0:753678 ] - [ INFO ] process file person_role_1450298875787.txt using 10286
+2015-12-21 15:21:36 [ formatFileList0:753678 ] - [ INFO ] processed file person_role_1450298875787.txt
+2015-12-21 15:21:36 [ formatFileList0:753771 ] - [ INFO ] process file person_role_1450461956382.txt using 93
+2015-12-21 15:21:36 [ formatFileList0:753771 ] - [ INFO ] processed file person_role_1450461956382.txt
+2015-12-21 15:21:36 [ formatFileList0:753880 ] - [ INFO ] process file person_role_1450462807634.txt using 109
+2015-12-21 15:21:36 [ formatFileList0:753880 ] - [ INFO ] processed file person_role_1450462807634.txt
+2015-12-21 15:21:53 [ formatFileList0:770750 ] - [ INFO ] person_role,write to file using 16870
+2015-12-21 15:21:53 [ formatFileList0:770844 ] - [ INFO ] process file persons_1449533488153.txt using 94
+2015-12-21 15:21:53 [ formatFileList0:770844 ] - [ INFO ] processed file persons_1449533488153.txt
+2015-12-21 15:21:54 [ formatFileList0:771905 ] - [ INFO ] process file persons_1449533854131.txt using 1061
+2015-12-21 15:21:54 [ formatFileList0:771905 ] - [ INFO ] processed file persons_1449533854131.txt
+2015-12-21 15:21:54 [ formatFileList0:772014 ] - [ INFO ] process file persons_1449783353751.txt using 109
+2015-12-21 15:21:54 [ formatFileList0:772014 ] - [ INFO ] processed file persons_1449783353751.txt
+2015-12-21 15:21:54 [ formatFileList0:772123 ] - [ INFO ] process file persons_1449783800231.txt using 109
+2015-12-21 15:21:54 [ formatFileList0:772123 ] - [ INFO ] processed file persons_1449783800231.txt
+2015-12-21 15:22:00 [ formatFileList1:778301 ] - [ INFO ] process file person_event_1449531264651.txt using 71227
+2015-12-21 15:22:00 [ formatFileList1:778301 ] - [ INFO ] processed file person_event_1449531264651.txt
+2015-12-21 15:42:04 [ commons-pool-EvictionTimer:1981726 ] - [ WARN ] An internal object pool swallowed an Exception.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:257)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:65)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:149)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:35)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:47)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:30)
+	at org.postgresql.Driver.makeConnection(Driver.java:414)
+	at org.postgresql.Driver.connect(Driver.java:282)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:861)
+	at org.apache.commons.pool2.impl.GenericObjectPool.ensureIdle(GenericObjectPool.java:920)
+	at org.apache.commons.pool2.impl.GenericObjectPool.ensureMinIdle(GenericObjectPool.java:899)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:1036)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: java.io.EOFException
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:284)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:405)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:203)
+	... 16 more
+2015-12-21 15:42:10 [ formatFileList0:1988329 ] - [ INFO ] process file persons_1450296363084.txt using 1216206
+2015-12-21 15:42:10 [ formatFileList0:1988329 ] - [ INFO ] processed file persons_1450296363084.txt
+2015-12-21 15:43:04 [ formatFileList0:2042355 ] - [ INFO ] process file persons_1450297130636.txt using 54026
+2015-12-21 15:43:04 [ formatFileList0:2042355 ] - [ INFO ] processed file persons_1450297130636.txt
+2015-12-21 15:43:10 [ formatFileList0:2048062 ] - [ INFO ] process file persons_1450297834281.txt using 5707
+2015-12-21 15:43:10 [ formatFileList0:2048062 ] - [ INFO ] processed file persons_1450297834281.txt
+2015-12-21 15:43:10 [ formatFileList0:2048156 ] - [ INFO ] process file persons_1450461956351.txt using 94
+2015-12-21 15:43:10 [ formatFileList0:2048156 ] - [ INFO ] processed file persons_1450461956351.txt
+2015-12-21 15:43:10 [ formatFileList0:2048249 ] - [ INFO ] process file persons_1450462605198.txt using 93
+2015-12-21 15:43:10 [ formatFileList0:2048249 ] - [ INFO ] processed file persons_1450462605198.txt
+2015-12-21 15:43:44 [ formatFileList0:2082551 ] - [ INFO ] persons,write to file using 34302
+2015-12-21 15:43:51 [ formatFileList0:2089059 ] - [ INFO ] process file phone_1448920687688.txt using 6508
+2015-12-21 15:43:51 [ formatFileList0:2089059 ] - [ INFO ] processed file phone_1448920687688.txt
+2015-12-21 15:44:02 [ formatFileList0:2100007 ] - [ INFO ] process file phone_1448921520147.txt using 10948
+2015-12-21 15:44:02 [ formatFileList0:2100007 ] - [ INFO ] processed file phone_1448921520147.txt
+2015-12-21 15:44:02 [ formatFileList0:2100303 ] - [ INFO ] process file phone_1449533488091.txt using 296
+2015-12-21 15:44:02 [ formatFileList0:2100303 ] - [ INFO ] processed file phone_1449533488091.txt
+2015-12-21 15:44:02 [ formatFileList0:2100490 ] - [ INFO ] process file phone_1449533854116.txt using 187
+2015-12-21 15:44:02 [ formatFileList0:2100490 ] - [ INFO ] processed file phone_1449533854116.txt
+2015-12-21 15:44:02 [ formatFileList0:2100600 ] - [ INFO ] process file phone_1449534531024.txt using 110
+2015-12-21 15:44:02 [ formatFileList0:2100600 ] - [ INFO ] processed file phone_1449534531024.txt
+2015-12-21 15:44:03 [ formatFileList0:2100693 ] - [ INFO ] process file phone_1449783800216.txt using 93
+2015-12-21 15:44:03 [ formatFileList0:2100693 ] - [ INFO ] processed file phone_1449783800216.txt
+2015-12-21 15:44:03 [ formatFileList0:2100787 ] - [ INFO ] process file phone_1450306034489.txt using 94
+2015-12-21 15:44:03 [ formatFileList0:2100787 ] - [ INFO ] processed file phone_1450306034489.txt
+2015-12-21 15:44:03 [ formatFileList0:2100880 ] - [ INFO ] process file phone_1450306187100.txt using 93
+2015-12-21 15:44:03 [ formatFileList0:2100880 ] - [ INFO ] processed file phone_1450306187100.txt
+2015-12-21 15:44:03 [ formatFileList0:2100974 ] - [ INFO ] process file phone_1450463031820.txt using 94
+2015-12-21 15:44:03 [ formatFileList0:2100974 ] - [ INFO ] processed file phone_1450463031820.txt
+2015-12-21 15:44:05 [ formatFileList0:2102971 ] - [ INFO ] phone,write to file using 1997
+2015-12-21 15:44:05 [ formatFileList0:2103065 ] - [ INFO ] process file plan_memberships_1450461956361.txt using 94
+2015-12-21 15:44:05 [ formatFileList0:2103065 ] - [ INFO ] processed file plan_memberships_1450461956361.txt
+2015-12-21 15:44:06 [ formatFileList0:2104267 ] - [ INFO ] plan_memberships,write to file using 1202
+2015-12-21 15:44:33 [ formatFileList0:2130818 ] - [ INFO ] process file postal_address_1448920687750.txt using 26551
+2015-12-21 15:44:33 [ formatFileList0:2130818 ] - [ INFO ] processed file postal_address_1448920687750.txt
+2015-12-21 15:44:33 [ formatFileList0:2131210 ] - [ INFO ] process file postal_address_1449533854147.txt using 392
+2015-12-21 15:44:33 [ formatFileList0:2131210 ] - [ INFO ] processed file postal_address_1449533854147.txt
+2015-12-21 15:44:33 [ formatFileList0:2131304 ] - [ INFO ] process file postal_address_1449534531024.txt using 94
+2015-12-21 15:44:33 [ formatFileList0:2131304 ] - [ INFO ] processed file postal_address_1449534531024.txt
+2015-12-21 15:44:33 [ formatFileList0:2131398 ] - [ INFO ] process file postal_address_1449783800247.txt using 94
+2015-12-21 15:44:33 [ formatFileList0:2131398 ] - [ INFO ] processed file postal_address_1449783800247.txt
+2015-12-21 15:44:33 [ formatFileList0:2131491 ] - [ INFO ] process file postal_address_1450306034505.txt using 93
+2015-12-21 15:44:33 [ formatFileList0:2131491 ] - [ INFO ] processed file postal_address_1450306034505.txt
+2015-12-21 15:44:33 [ formatFileList0:2131585 ] - [ INFO ] process file postal_address_1450306187100.txt using 94
+2015-12-21 15:44:33 [ formatFileList0:2131585 ] - [ INFO ] processed file postal_address_1450306187100.txt
+2015-12-21 15:44:34 [ formatFileList0:2131678 ] - [ INFO ] process file postal_address_1450463031831.txt using 93
+2015-12-21 15:44:34 [ formatFileList0:2131678 ] - [ INFO ] processed file postal_address_1450463031831.txt
+2015-12-21 15:44:35 [ formatFileList0:2133051 ] - [ INFO ] postal_address,write to file using 1373
+2015-12-21 15:44:35 [ formatFileList0:2133146 ] - [ INFO ] process file procedure_code_1449533488138.txt using 95
+2015-12-21 15:44:35 [ formatFileList0:2133146 ] - [ INFO ] processed file procedure_code_1449533488138.txt
+2015-12-21 15:44:36 [ formatFileList0:2134300 ] - [ INFO ] procedure_code,write to file using 1154
+2015-12-21 15:44:36 [ formatFileList0:2134394 ] - [ INFO ] process file reference_data_1449535512189.txt using 94
+2015-12-21 15:44:36 [ formatFileList0:2134394 ] - [ INFO ] processed file reference_data_1449535512189.txt
+2015-12-21 15:44:36 [ formatFileList0:2134487 ] - [ INFO ] process file reference_data_1450123329465.txt using 93
+2015-12-21 15:44:36 [ formatFileList0:2134487 ] - [ INFO ] processed file reference_data_1450123329465.txt
+2015-12-21 15:44:37 [ formatFileList0:2135616 ] - [ INFO ] reference_data,write to file using 1129
+2015-12-21 15:44:38 [ formatFileList0:2135709 ] - [ INFO ] process file topic_1449534832500.txt using 93
+2015-12-21 15:44:38 [ formatFileList0:2135709 ] - [ INFO ] processed file topic_1449534832500.txt
+2015-12-21 15:44:38 [ formatFileList0:2135804 ] - [ INFO ] process file topic_1449783967470.txt using 95
+2015-12-21 15:44:38 [ formatFileList0:2135804 ] - [ INFO ] processed file topic_1449783967470.txt
+2015-12-21 15:44:38 [ formatFileList0:2135897 ] - [ INFO ] process file topic_1450462807612.txt using 93
+2015-12-21 15:44:38 [ formatFileList0:2135897 ] - [ INFO ] processed file topic_1450462807612.txt
+2015-12-21 15:44:39 [ formatFileList0:2137022 ] - [ INFO ] topic,write to file using 1125
+2015-12-21 15:44:39 [ formatFileList0:2137116 ] - [ INFO ] process file um_activity_1449534832453.txt using 94
+2015-12-21 15:44:39 [ formatFileList0:2137116 ] - [ INFO ] processed file um_activity_1449534832453.txt
+2015-12-21 15:44:40 [ formatFileList0:2138473 ] - [ INFO ] um_activity,write to file using 1357
+2015-12-21 15:44:40 [ formatFileList0:2138567 ] - [ INFO ] process file um_diagnosis_line_1449534832484.txt using 94
+2015-12-21 15:44:40 [ formatFileList0:2138567 ] - [ INFO ] processed file um_diagnosis_line_1449534832484.txt
+2015-12-21 15:44:42 [ formatFileList0:2140018 ] - [ INFO ] um_diagnosis_line,write to file using 1451
+2015-12-21 15:44:42 [ formatFileList0:2140114 ] - [ INFO ] process file um_diagnosis_set_1449534832484.txt using 96
+2015-12-21 15:44:42 [ formatFileList0:2140114 ] - [ INFO ] processed file um_diagnosis_set_1449534832484.txt
+2015-12-21 15:44:43 [ formatFileList0:2141377 ] - [ INFO ] um_diagnosis_set,write to file using 1263
+2015-12-21 15:44:43 [ formatFileList0:2141471 ] - [ INFO ] process file um_review_1449534832516.txt using 94
+2015-12-21 15:44:43 [ formatFileList0:2141471 ] - [ INFO ] processed file um_review_1449534832516.txt
+2015-12-21 15:44:43 [ formatFileList0:2141564 ] - [ INFO ] process file um_review_1450281869687.txt using 93
+2015-12-21 15:44:43 [ formatFileList0:2141564 ] - [ INFO ] processed file um_review_1450281869687.txt
+2015-12-21 15:44:45 [ formatFileList0:2143002 ] - [ INFO ] um_review,write to file using 1438
+2015-12-21 15:44:45 [ formatFileList0:2143096 ] - [ INFO ] process file um_service_1449534832453.txt using 94
+2015-12-21 15:44:45 [ formatFileList0:2143096 ] - [ INFO ] processed file um_service_1449534832453.txt
+2015-12-21 15:44:46 [ formatFileList0:2144625 ] - [ INFO ] um_service,write to file using 1529

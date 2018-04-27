@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/tx  
+    http://www.springframework.org/schema/tx/spring-tx.xsd  
+    http://www.springframework.org/schema/jdbc  
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    http://www.springframework.org/schema/cache  
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd  
+    http://www.springframework.org/schema/aop  
+    http://www.springframework.org/schema/aop/spring-aop.xsd  
+    http://www.springframework.org/schema/util  
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<context:component-scan base-package="com.tmg,com.tmghealth"></context:component-scan>
+	<context:annotation-config />
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:#{systemProperties.env}/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- different way to configure jdbc.properties <context:property-placeholder 
+		location="jdbc.properties"/> -->
+
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> -->
+
+	<bean id="dataSourceGemfireThin" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.gemfire.thin}" />
+		<property name="url" value="${jdbc.url.gemfire.thin}" />
+		<property name="username" value="${jdbc.username.gemfire}" />
+		<property name="password" value="${jdbc.password.gemfire}" />
+
+		<property name="initialSize" value="10" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="100" />
+
+
+		<property name="maxWait" value="60000" />
+
+
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+	</bean>
+<!--  
+
+	<bean id="dataSourceGemfireFix" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.gemfire.thin}" />
+		<property name="url"
+			value="jdbc:gemfirexd://#{systemProperties.host}:1527/;load-balance=false;skip-constraint-checks=true" />
+		<property name="username" value="${jdbc.username.gemfire}" />
+		<property name="password" value="${jdbc.password.gemfire}" />
+
+		<property name="initialSize" value="5" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="10" />
+
+
+		<property name="maxWait" value="30000" />
+
+
+		<property name="timeBetweenEvictionRunsMillis" value="30000" />
+
+
+		<property name="minEvictableIdleTimeMillis" value="100000" />
+	</bean>
+
+-->
+
+	<bean id="dataSourceGreenplum" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.greenplum}" />
+		<property name="url" value="${jdbc.url.greenplum}" />
+		<property name="username" value="${jdbc.username.greenplum}" />
+		<property name="password" value="${jdbc.password.greenplum}" />
+
+
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="10" />
+
+
+		<property name="maxWait" value="60000" />
+
+
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+	</bean>
+	
+	
+	<bean id="dataSourceMSSql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">   
+        <property name="driverClassName" value="${jdbc.driverClassName.MSSql}"/>
+        <property name="url" value="${jdbc.url.MSSql}" />  
+        <property name="username" value="${jdbc.username.MSSql}" />  
+        <property name="password" value="${jdbc.password.MSSql}" />  
+
+        <property name="initialSize" value="5" />  
+        <property name="minIdle" value="1" />  
+        <property name="maxActive" value="3" />  
+  
+
+        <property name="maxWait" value="60000" />  
+  
+    
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />  
+  
+        
+        <property name="minEvictableIdleTimeMillis" value="300000" />  
+    </bean>  
+	
+	
+	<bean id="Column" class="com.tmg.gemfire.Bean.Column" scope="prototype">
+		<constructor-arg type="java.lang.String" value="initial" />
+		<constructor-arg type="java.lang.String" value="initial" />
+		<constructor-arg type="int" value="0" />
+		<constructor-arg type="java.lang.String" value="initial" />
+		<constructor-arg type="int" value="0" />
+	</bean>
+
+	<bean id="Table" class="com.tmg.gemfire.Bean.Table" scope="prototype">
+		<constructor-arg type="java.lang.String" value="initial" />
+	</bean>
+
+	<bean id="GPDAO" class="com.tmg.gemfire.DAOImp.GreenplumDAOImp">
+	</bean>
+
+	<bean id="GFDAO" class="com.tmg.gemfire.DAOImp.GemfireDAOImp" scope="prototype">
+	</bean>
+
+
+</beans>  

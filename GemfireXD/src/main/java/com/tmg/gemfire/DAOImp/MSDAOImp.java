@@ -1,0 +1,462 @@
+/**
+ * 
+ */
+package com.tmg.gemfire.DAOImp;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import com.tmg.core.Mapper;
+import com.tmg.core.Properties;
+import com.tmg.gemfire.Bean.Column;
+import com.tmg.gemfire.Bean.Table;
+import com.tmg.gemfire.DAO.CommonDAO;
+import com.tmg.gemfire.Util.FileUtil;
+import com.tmg.gemfire.Util.TableUtil;
+
+/**
+ * @author Haojie Ma
+ * @date Jun 6, 2017
+ */
+
+
+@Component("MsSqlImp")
+public class MSDAOImp implements CommonDAO{
+	
+	private Logger log=Logger.getLogger(MSDAOImp.class);
+	
+	@Resource(name="dataSourceMSSql")
+	private DataSource dataSource;
+	
+	public String generateSchema(Table table){
+		
+		return null;
+	}
+	
+	
+	public ArrayList<String> getTables(String schema){
+		
+		ArrayList<String> list = new ArrayList<String>();
+		ResultSet tables = null;
+		String name;
+		Connection conn=null;
+		try {
+			conn=dataSource.getConnection();
+			DatabaseMetaData dbMeta = conn.getMetaData();
+			String[] types = { "TABLE" };
+
+			tables = dbMeta.getTables(null, schema, "%", types);
+
+			while (tables.next()) {
+				System.out.println(tables.getString(2)+","+tables.getString(3)+","+tables.getString(4)+","+tables.getString(5));
+				name = tables.getString(3);
+				list.add(name);
+			}
+
+		} catch (Exception e) {
+
+			log.error("error",e);
+
+		} finally {
+
+			try {
+				tables.close();
+				conn.close();
+
+			} catch (Exception ex) {
+
+				log.error("error",ex);
+			}
+		}
+
+		return list;
+		
+		
+	}
+	public int executeUpdate(String sql) throws SQLException{
+		
+		return 0;
+		
+	}
+	public Map<Integer,Long> execute1(String sql) throws SQLException{
+		
+		
+		return null;
+		
+	}
+	public int execute(String sql) throws SQLException{
+		
+		return 0;
+		
+	}
+	public Table getTableMetaData(String schemaName, String tableName){
+		
+		long start=System.currentTimeMillis();
+		Table table = new Table(tableName);
+		table.setName(tableName);
+		List<String> primaryList = new ArrayList<String>();
+		List<Column> columnList = new ArrayList<Column>();
+		String columnName;
+		String columnType;
+		String defaultValue;
+		int columnLen;
+		int decimalLen = -1;
+		String flag;
+		ResultSet rs = null;// get column meta data
+		ResultSet rsKey = null;// for primary key
+		Connection conn=null;
+		try {
+
+			conn=dataSource.getConnection();
+			DatabaseMetaData dbmeta = conn.getMetaData();
+
+			rsKey = dbmeta.getPrimaryKeys(null, schemaName, tableName);
+
+			while (rsKey.next()) {
+				// String tName=rsKey.getString("TABLE_NAME");
+				String pri = rsKey.getString("COLUMN_NAME");
+				primaryList.add(pri);
+				// String index=rsKey.getString("KEY_SEQ");
+				// String primary=rsKey.getString("PK_NAME");
+				// System.out.println("Primary Key===="+tName+"\t"+col+"\t"+index+"\t"+primary);
+			}
+
+			rs = dbmeta.getColumns(null, schemaName, tableName, "%");
+			while (rs.next()) {
+
+				columnName = rs.getString("COLUMN_NAME");// column name
+				columnType = rs.getString("TYPE_NAME");// type name
+				columnLen = Integer.valueOf(rs.getString("COLUMN_SIZE"));// column
+																			// size
+				if (rs.getString("DECIMAL_DIGITS") != null) {
+					try {
+						decimalLen = Integer.valueOf(rs.getString("DECIMAL_DIGITS"));// decimal len
+					} catch (Exception e) {
+						log.info("Convert to Integer error",e);
+					}
+
+				}
+
+				flag = rs.getString("IS_NULLABLE");// YES --- if the column can
+													// include NULLs NO --- if
+													// the column cannot include
+													// NULLs
+				defaultValue=rs.getString("COLUMN_DEF");
+				log.debug("columnName:"+columnName+",columnType:"+columnType+",columnLen:"+columnLen+",flag:"+flag+",decimalLen:"+decimalLen);
+				Column column = new Column(columnName, columnType, columnLen,flag, decimalLen,defaultValue);
+				if (primaryList.contains(columnName))
+					column.setPrimary(true);
+
+				columnList.add(column);
+			}
+
+			table.setCloumns(columnList);
+
+		} catch (Exception e) {
+			log.error("error",e);
+		} finally {
+			try {
+				if(rs!=null)
+					rs.close();
+				rsKey.close();
+				conn.close();
+			} catch (Exception ex) {
+				log.error("close connection error",ex);
+			}
+
+		}
+
+		long end=System.currentTimeMillis();
+		long time=end-start;
+		log.debug("getTableMetaData,Gemfire, time used:"+time);
+		return table;
+		
+	}
+
+	
+public String generateSchema(String schema,Table table){
+		
+		//boolean underScore=false;
+		
+		Map<String,String> dsKeyTableMap= TableUtil.getDistributedKeyTableMap();
+		final String identity=" GENERATED BY DEFAULT AS IDENTITY ";
+		
+		String tableName, columnName, oldcolumnType, newColumnType, flag,tmpKey,defaultValue;
+		int columnLen, columnDecimal;
+		tableName = table.getName();
+		//tableName=tableName.toLowerCase();
+		
+		
+		//it is used for static get table identity
+		//Map<String,List<String>> identityMap=TableUtil.getTableIdentity();
+		
+		// it is used for dynamic generating table identity
+		Map<String,List<String>> identityMap=new HashMap<String,List<String>>();
+		List<String> indentityColumn= new ArrayList<String>();
+		
+		identityMap.put(tableName.toUpperCase(), indentityColumn);
+		
+		
+		
+		String capital=Properties.getProperty("tmg.gf.table.default");
+		if(capital==null||capital.trim().equals(""))
+			capital="capital";
+		
+		if(capital.equalsIgnoreCase("capital")){
+			tableName=tableName.toUpperCase();
+			schema=schema.toUpperCase();
+		}
+			
+	
+		StringBuilder createTable = new StringBuilder("drop table if exists ");
+		createTable.append(schema).append(".").append(tableName).append(";\n");
+		createTable.append("Create table ");
+		if(schema!=null&&!schema.equals("")){
+			createTable.append(schema).append(".");
+		}
+		
+
+			createTable.append("\"").append(tableName).append("\"").append("(");
+		
+		
+		
+		List<Column> columns = table.getCloumns();
+		Iterator<Column> columnIt = columns.iterator();
+		List<String> primaryKeyList = new ArrayList<String>();
+		List<String> specialDT= new ArrayList<String>();
+		specialDT.add("NUMERIC");
+		specialDT.add("numeric");
+		int precision=40;
+		int scale=10;
+		String firstColumn="";
+		boolean first=true;
+		while (columnIt.hasNext()) {
+
+			Column column = columnIt.next();
+			columnName = column.getName();
+			//System.out.println("columnName"+columnName);
+			if(first)
+			{
+				firstColumn=columnName;
+				first=false;
+			}
+				
+			//the following is two lines are commented out, as tmg.gp.ignore.columns are configured
+			// and the column in the list is ignored when getTablemetaData
+			//if(columnName.equalsIgnoreCase("del"))
+				//continue;
+			oldcolumnType = column.getType();
+			newColumnType = Mapper.GP2Gemfire(oldcolumnType);// convert types
+			columnLen = column.getLen();
+			flag = column.getFlag();
+			defaultValue=column.getDefaultValue();
+			if (newColumnType == null) {
+				log.info(columnName+":No such type:" + oldcolumnType+ " is definied the mapper file\n");
+				continue;
+			} else if (newColumnType.equals("incompatible")) {
+				log.info(oldcolumnType+ " is a incompatible datatype\n");
+				//System.out.println("\t"+columnName+":"+oldcolumnType);
+				continue;
+			}
+			
+			//Some column name has space in it. such as Provider Network Team
+			//fix bug EPP-152
+			if(columnName.contains(" "))
+				columnName="\""+columnName+"\"";
+			
+			createTable.append("\n    ").append(columnName).append(" ").append(newColumnType);
+
+			if (Mapper.getParameter(oldcolumnType) == 1) {
+				
+					if(newColumnType.toLowerCase().equals("varchar")&&columnLen==2147483647)
+						columnLen=32672;
+					
+					createTable.append("(").append(columnLen).append(")");
+
+			} else if (Mapper.getParameter(oldcolumnType) == 2) {
+				
+				columnDecimal = column.getDecimalLen();
+				//the default len of numeric is 131089
+				
+				//make a concession in gemfire, as the default precision and scale are different from GP.
+				//By default, the two value of GP is infinite, precison in GF is 5 and scale is 0;
+				//Now make the default as below
+				//precision=40, scale=10
+				
+				if(specialDT.contains(oldcolumnType)){
+					if(columnLen==131089)//the default len of numberic is 131089
+						columnLen=precision;
+					if(columnDecimal==0)
+						columnDecimal=scale;
+				}
+				
+				//if(oldcolumnType.equalsIgnoreCase("NUMERIC")&&columnLen==131089)
+					//log.info(columnName+",NUMERIC with default length 131089");
+				//else
+					createTable.append("(").append(columnLen).append(",").append(columnDecimal).append(")");
+
+			}
+			
+			
+			
+			//String key=schema+"."+tableName;
+			if(identityMap.containsKey(tableName.toUpperCase())){
+				
+				List<String> columnList=identityMap.get(tableName.toUpperCase());
+				
+				if(columnList.contains(columnName.toUpperCase()))
+					createTable.append(identity);
+					
+				
+			}
+			
+			if (flag.equals("NO"))
+				createTable.append(" NOT NULL");
+			
+			if(defaultValue!=null&&!defaultValue.trim().equals("")){
+				if(defaultValue.equals("now()"))
+						defaultValue="current_timestamp";
+				createTable.append(" default ").append(defaultValue);
+			}
+				
+			
+			
+			createTable.append(",");
+			// System.out.println("	"+column.getName()+"	"+column.getType()+"	"+column.getLen()+"	"+column.getFlag()+"\t"+column.getDecimalLen());
+			//ver doesn't need to be part of primary in gf
+			if (column.isPrimary()&&!columnName.equals("ver")){
+				primaryKeyList.add(columnName);
+			}
+				
+		}
+		if (!primaryKeyList.isEmpty()) {
+			String primaryKey="";
+			if(primaryKeyList.contains("client_id"))
+				primaryKey+="client_id,";
+			for(int i=0;i<primaryKeyList.size();i++){
+				tmpKey=primaryKeyList.get(i);
+				if(!tmpKey.equals("client_id"))
+					primaryKey+=tmpKey+",";
+			}
+			primaryKey = primaryKey.substring(0, primaryKey.length() - 1);//remove the last comma of the primary key
+			//log.info("primary key is " + primaryKey+"\n");
+			createTable.append("\n    PRIMARY KEY (").append(primaryKey).append(")");
+		} else {
+			createTable.deleteCharAt(createTable.length() - 1);//remove the last comma of the statement
+		}
+		
+
+			createTable.append("\n)");
+			
+			if(primaryKeyList.isEmpty()){
+				
+				createTable.append("\nPARTITION BY COLUMN(").append(firstColumn).append(")");
+
+				
+			}else
+				createTable.append("\nPARTITION BY PRIMARY KEY");
+
+
+				/*	
+		
+				createTable.append("\nREDUNDANCY 1");
+				createTable.append("\nASYNCEVENTLISTENER(ODSEventListener)");
+				*/
+				//createTable.append("\nEVICTION BY LRUHEAPPERCENT EVICTACTION OVERFLOW PERSISTENT 'DISK_STORE' ASYNCHRONOUS;\n");
+				createTable.append("\nEVICTION BY LRUHEAPPERCENT EVICTACTION OVERFLOW PERSISTENT 'DISK_STORE';\n");
+		
+		return createTable.toString();
+	}
+
+
+	public String getSelectStatement(String sourceSchemaName,String targetSchemaName,Table table){
+		
+		StringBuffer sb= new StringBuffer("select 'insert into ").append(targetSchemaName).append(".").append(table.getName()).append(" values('");
+		
+		List<Column> columns = table.getCloumns();
+		List<String> columnTypeList= new ArrayList<String>();
+		columnTypeList.add("datetime");
+		columnTypeList.add("datetime2");
+		columnTypeList.add("smalldatetime");
+		columnTypeList.add("date");
+		columnTypeList.add("time");
+		columnTypeList.add("timestamp");
+		columnTypeList.add("xml");
+		columnTypeList.add("char");
+		columnTypeList.add("nchar");
+		columnTypeList.add("varchar");
+		columnTypeList.add("nvarchar");
+		columnTypeList.add("text");
+		columnTypeList.add("ntext");
+		columnTypeList.add("binary");
+		columnTypeList.add("varbinary");
+		
+		int index=0;
+		for(Column column:columns){
+			
+
+			if(columnTypeList.contains(column.getType().toLowerCase())){
+				if(index==0)
+					sb.append("+");
+				sb.append("''''+COALESCE(replace(").append(column.getName()).append(", '''',''''''),'')+''''");
+				if(index==columns.size()-1)
+					sb.append("+");
+			}else{
+				if(index==0){
+					sb.append("+rtrim(ltrim(str(");
+				}else if(index==columns.size()-1){
+					sb.append("rtrim(ltrim(str(");
+				}
+				sb.append("COALESCE(rtrim(ltrim(str(").append(column.getName()).append("))),'NULL')");
+				
+				
+				if(index==0){
+					sb.append(")))");
+				}else if(index==columns.size()-1){
+					sb.append(")))+");
+				}
+			}
+				
+				
+			
+			
+			sb.append(",");
+			
+			index++;
+			
+			
+		}
+		
+		
+		sb.deleteCharAt(sb.length()-1);
+		
+		sb.append("');'");
+		
+		sb.append(" from ").append("FACETS_ETL_METADATA.").append(sourceSchemaName).append(".").append(table.getName());
+		
+		
+		return sb.toString();
+		
+		
+		
+	}
+
+
+}
+
+

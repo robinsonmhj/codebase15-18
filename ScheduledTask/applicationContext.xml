@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/tx  
+    http://www.springframework.org/schema/tx/spring-tx.xsd  
+    http://www.springframework.org/schema/jdbc  
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    http://www.springframework.org/schema/cache  
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd  
+    http://www.springframework.org/schema/aop  
+    http://www.springframework.org/schema/aop/spring-aop.xsd  
+    http://www.springframework.org/schema/util  
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	
+	<context:component-scan
+		base-package="com.tmg.gf.Model;com.tmg.gf.DAOImp;com.tmg.gf.DAO;com.tmg.Model;com.tmg.quartz.Jobs"></context:component-scan>
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- different way to configure jdbc.properties <context:property-placeholder 
+		location="jdbc.properties"/> -->
+
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> -->
+
+	<bean id="dataSourceGemfireThin" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.gemfire.thin}" />
+		<property name="url" value="${jdbc.url.gemfire.thin}" />
+		<property name="username" value="${jdbc.username.gemfire}" />
+		<property name="password" value="${jdbc.password.gemfire}" />
+
+		<property name="initialSize" value="3" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="5" />
+
+		
+		<property name="maxWait" value="60000" />
+
+		
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+		
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+	</bean>
+
+    <!--  
+	 <bean id="dataSourceGreenplum" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+   		<property name="driverClassName" value="${jdbc.driverClassName.greenplum}"/>
+        <property name="url" value="${jdbc.url.greenplum}" />  
+        <property name="username" value="${jdbc.username.greenplum}" />  
+        <property name="password" value="${jdbc.password.greenplum}" />  
+  
+ 
+        <property name="initialSize" value="1" />  
+        <property name="minIdle" value="1" />  
+        <property name="maxActive" value="10" />  
+  
+       
+        <property name="maxWait" value="60000" />  
+  
+        
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />  
+  
+       
+        <property name="minEvictableIdleTimeMillis" value="300000" />  
+		</bean>
+-->
+	<bean id="hibernate4AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceGemfireThin" />
+
+		<!-- using annotations -->
+		<property name="annotatedClasses">
+			<list>
+				<value>com.tmg.gf.Model.GfSession</value>
+				<value>com.tmg.gf.Model.QueryDetail</value>
+				<value>com.tmg.gf.Model.QueryStatus</value>
+				<value>com.tmg.gf.Model.QueryKilledLog</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">com.pivotal.gemfirexd.hibernate.GemFireXDDialect
+				</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+
+		<!-- using configuration file <property name="configLocation" value="classpath:hibernate.cfg.xml" 
+			/> <property name="packagesToScan" value="com.tmg.gf.Model" /> -->
+	</bean>
+
+
+
+
+	<bean id="GemfireDAO" class="com.tmg.gf.DAOImp.GemfireDAOImp">
+		<property name="dataSource" ref="dataSourceGemfireThin" />
+	</bean>
+
+
+	<bean id="GfSessionDAO" class="com.tmg.gf.DAOImp.GfSessionDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+
+	<bean id="QueryDetailDAO" class="com.tmg.gf.DAOImp.QueryDetailDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+	<bean id="QueryStatusDAO" class="com.tmg.gf.DAOImp.QueryStatusDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+	<bean id="QueryKilledLogDAO" class="com.tmg.gf.DAOImp.QueryKilledLogDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+
+
+	
+	<bean name="killSlowQueryJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.tmg.quartz.Jobs.KillSlowQueryJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfDaoImp" value-ref="GemfireDAO" />
+				<entry key="sessionDaoImp" value-ref="GfSessionDAO" />
+				<entry key="killLogDaoImp" value-ref="QueryKilledLogDAO" />
+				<entry key="queryStatusImp" value-ref="QueryStatusDAO" />
+			</map>
+		</property>
+	</bean>
+
+
+	<bean name="monitorQueryJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.tmg.quartz.Jobs.MonitorQueryJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="queryDetailImp" value-ref="QueryDetailDAO" />
+				<entry key="queryStatusImp" value-ref="QueryStatusDAO" />
+				<entry key="sessionDaoImp" value-ref="GfSessionDAO" />
+			</map>
+		</property>
+	</bean>
+
+ 
+    <!-- 
+	
+	<bean id="cronTriggerKill"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="killSlowQueryJob" />
+		<property name="cronExpression" value="0/30 * * * * ?" />
+	</bean>
+
+
+
+	
+	<bean id="cronTriggerMonitor"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="monitorQueryJob" />
+		<property name="cronExpression" value="0/5 * * * * ?" />
+	</bean>
+ -->
+	
+	
+	<!-- 
+	<bean id="GreenplumDAO" class="com.tmg.gf.DAOImp.GreenplumDAOImp">
+		<property name="dataSource" ref="dataSourceGreenplum" />
+	</bean> 
+	 -->
+	<!-- 
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="schedulerName" value="SchedulerOne" />
+		<property name="triggers">
+
+			<list>
+				<ref bean="cronTriggerKill" />
+				<ref bean="cronTriggerMonitor" />
+			</list>
+
+		</property>
+		<property name="quartzProperties">
+			<props>
+				<prop key="org.quartz.threadPool.class">org.quartz.simpl.SimpleThreadPool</prop>
+				<prop key="org.quartz.threadPool.threadCount">10</prop>
+			</props>
+		</property>
+	</bean>
+ -->
+
+
+
+
+</beans>  

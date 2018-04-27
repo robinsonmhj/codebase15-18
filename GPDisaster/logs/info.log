@@ -1,0 +1,6 @@
+2016-03-01 14:26:25 [ main:0 ] - [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64a294a6: startup date [Tue Mar 01 14:26:25 EST 2016]; root of context hierarchy
+2016-03-01 14:26:25 [ main:76 ] - [ INFO ] Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-03-01 14:26:29 [ main:3510 ] - [ INFO ] Loading properties file from URL [file:/C:/Users/hma/workspace/GPDisaster/target/classes/jdbc.properties]
+2016-03-01 14:28:02 [ main:0 ] - [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64a294a6: startup date [Tue Mar 01 14:28:02 EST 2016]; root of context hierarchy
+2016-03-01 14:28:03 [ main:35 ] - [ INFO ] Loading XML bean definitions from class path resource [applicationContext.xml]
+2016-03-01 14:28:03 [ main:377 ] - [ INFO ] Loading properties file from URL [file:/C:/Users/hma/workspace/GPDisaster/target/classes/jdbc.properties]

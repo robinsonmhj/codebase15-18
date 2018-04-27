@@ -1,0 +1,31 @@
+
+url to get sector and industry
+https://finance.yahoo.com/q/in?s=BATRA+Industry
+
+
+
+//td[@class='yfnc_tabledata1']/a[1]
+
+
+
+
+
+url to get company info
+
+
+https://finance.yahoo.com/q/pr?s=AAL
+
+
+company name: //td[@class='yfnc_modtitlew1']/b
+address //td[@class='yfnc_modtitlew1']/text()[1]
+city,state,zipcode //td[@class='yfnc_modtitlew1']/text()[2]
+country //td[@class='yfnc_modtitlew1']/text()[3]
+phone //td[@class='yfnc_modtitlew1']/text()[4]
+website //td[@class='yfnc_modtitlew1']/a[2]
+sector && industry //td[@class='yfnc_tabledata1']/a
+
+
+
+
+Business Summary //td[@class='yfnc_modtitlew1']/p[1]
+

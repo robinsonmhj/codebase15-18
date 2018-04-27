@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tmg.gf.Model">
+	<class name="GfSession" table="sessions" schema="sys">
+		<id name="ID" column="ID">
+   		 </id>
+		<property name="SESSION_ID" column="SESSION_ID" />
+		<property name="HOSTNAME" column="HOSTNAME" />
+		<property name="SERVER_LISTENING_PORT" column="SERVER_LISTENING_PORT" />
+		<property name="USER_ID" column="USER_ID" />
+		<property name="CLIENT_BIND_ADDRESS" column="CLIENT_BIND_ADDRESS" />
+		<property name="CLIENT_BIND_PORT" column="CLIENT_BIND_PORT" />
+		<property name="SOCKET_CONNECTION_STATUS" column="SOCKET_CONNECTION_STATUS" />
+		<property name="SESSION_STATUS" column="SESSION_STATUS" />
+		<property name="SESSION_BEGIN_TIME" column="SESSION_BEGIN_TIME" />
+		<property name="SESSION_INFO" column="SESSION_INFO" />
+		<property name="CURRENT_STATEMENT_UUID" column="CURRENT_STATEMENT_UUID" />
+		<property name="CURRENT_STATEMENT" column="CURRENT_STATEMENT" />
+		<property name="CURRENT_STATEMENT_STATUS" column="CURRENT_STATEMENT_STATUS" />
+		<property name="CURRENT_STATEMENT_ELAPSED_TIME" column="CURRENT_STATEMENT_ELAPSED_TIME" />
+		<property name="CURRENT_STATEMENT_ACCESS_FREQUENCY" column="CURRENT_STATEMENT_ACCESS_FREQUENCY" />
+		<property name="CURRENT_STATEMENT_MEMORY_USAGE" column="CURRENT_STATEMENT_MEMORY_USAGE" />
+		<property name="NETWORK_INTERFACE_INFO" column="NETWORK_INTERFACE_INFO" />
+		<!--  
+		<query name="get.By.status" cacheable="false">
+			select * from sessions where current_statement_status like '%EXECUTING%' and current_statement_elapsed_time>30
+		</query>
+		-->
+		
+	</class>
+</hibernate-mapping>

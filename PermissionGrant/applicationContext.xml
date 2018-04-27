@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/tx  
+    http://www.springframework.org/schema/tx/spring-tx.xsd  
+    http://www.springframework.org/schema/jdbc  
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    http://www.springframework.org/schema/cache  
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd  
+    http://www.springframework.org/schema/aop  
+    http://www.springframework.org/schema/aop/spring-aop.xsd  
+    http://www.springframework.org/schema/util  
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<context:component-scan
+		base-package="com.tmg.gf.Model;com.tmg.gf.DAOImp;com.tmg.gf.DAO;com.tmg.Model;"></context:component-scan>
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:#{systemProperties.env}/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- different way to configure jdbc.properties <context:property-placeholder 
+		location="jdbc.properties"/> -->
+
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+		destroy-method="close"> -->
+
+	<bean id="dataSourceGemfireThin" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName.gemfire.thin}" />
+		<property name="url" value="${jdbc.url.gemfire.thin}" />
+		<property name="username" value="${jdbc.username.gemfire}" />
+		<property name="password" value="${jdbc.password.gemfire}" />
+
+		<property name="initialSize" value="5" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="30" />
+
+
+		<property name="maxWait" value="10000" />
+
+
+		<property name="timeBetweenEvictionRunsMillis" value="30000" />
+
+
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+	</bean>
+
+	<bean id="hibernate4AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceGemfireThin" />
+
+		<!-- using annotations -->
+		<property name="annotatedClasses">
+			<list>
+				<value>com.tmg.gf.Model.GroupModel</value>
+				<value>com.tmg.gf.Model.PrivilegeModel</value>
+				<value>com.tmg.gf.Model.RequestHistoryModel</value>
+				<value>com.tmg.gf.Model.ProcedureModel</value>
+				<value>com.tmg.gf.Model.RoleModel</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">com.pivotal.gemfirexd.hibernate.GemFireXDDialect
+				</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+
+		<!-- using configuration file <property name="configLocation" value="classpath:hibernate.cfg.xml" 
+			/> <property name="packagesToScan" value="com.tmg.gf.Model" /> -->
+	</bean>
+
+
+
+
+	<bean id="GemfireDAO" class="com.tmg.gf.DAOImp.GemfireDAOImp">
+		<property name="dataSource" ref="dataSourceGemfireThin" />
+	</bean>
+
+
+	<bean id="RequestDAO" class="com.tmg.gf.DAOImp.RequestHistoryDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+
+	<bean id="PrivilegeDAO" class="com.tmg.gf.DAOImp.PrivilegeDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+
+	<bean id="GroupDAO" class="com.tmg.gf.DAOImp.GroupDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+	<bean id="ProcedureDAO" class="com.tmg.gf.DAOImp.ProcedureDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+	
+	<bean id="RoleDAO" class="com.tmg.gf.DAOImp.RoleDAOImp" scope="prototype">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+</beans>  
